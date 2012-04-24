@@ -9,7 +9,7 @@
 #import "MagicalRecord.h"
 
 @interface MagicalRecord (ShorthandSupport)
-
+#ifdef MR_SHORTHAND
 + (void) swizzleShorthandMethods;
-
+#endif
 @end
