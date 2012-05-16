@@ -29,7 +29,7 @@
 #endif
 
 #ifndef kCFCoreFoundationVersionNumber_iPhoneOS_5_0
-#define kCFCoreFoundationVersionNumber_iPhoneOS_5_0 674.0
+#define kCFCoreFoundationVersionNumber_iPhoneOS_5_0 9674.0
 #endif
 
 #define PRIVATE_QUEUES_ENABLED(...) \
