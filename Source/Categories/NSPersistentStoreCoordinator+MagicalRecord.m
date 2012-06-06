@@ -72,6 +72,7 @@ NSString * const kMagicalRecordPSCDidCompleteiCloudSetupNotification = @"kMagica
                                                          error:&error];
     if (!store) 
     {
+		[[IMNavigationCoordinator instance] presentDatabaseIncompatibleScreen];
         [MagicalRecordHelpers handleErrors:error];
     }
     return store;
