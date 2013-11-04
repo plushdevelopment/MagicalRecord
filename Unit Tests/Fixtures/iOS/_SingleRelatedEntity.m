@@ -4,10 +4,14 @@
 #import "_SingleRelatedEntity.h"
 
 const struct SingleRelatedEntityAttributes SingleRelatedEntityAttributes = {
+	.mappedStringAttribute = @"mappedStringAttribute",
 };
 
 const struct SingleRelatedEntityRelationships SingleRelatedEntityRelationships = {
-	.testRelationship = @"testRelationship",
+	.testAbstractToManyRelationship = @"testAbstractToManyRelationship",
+	.testAbstractToOneRelationship = @"testAbstractToOneRelationship",
+	.testConcreteToManyRelationship = @"testConcreteToManyRelationship",
+	.testConcreteToOneRelationship = @"testConcreteToOneRelationship",
 };
 
 const struct SingleRelatedEntityFetchedProperties SingleRelatedEntityFetchedProperties = {
@@ -46,7 +50,44 @@ const struct SingleRelatedEntityFetchedProperties SingleRelatedEntityFetchedProp
 
 
 
-@dynamic testRelationship;
+@dynamic mappedStringAttribute;
+
+
+
+
+
+
+@dynamic testAbstractToManyRelationship;
+
+	
+- (NSMutableSet*)testAbstractToManyRelationshipSet {
+	[self willAccessValueForKey:@"testAbstractToManyRelationship"];
+  
+	NSMutableSet *result = (NSMutableSet*)[self mutableSetValueForKey:@"testAbstractToManyRelationship"];
+  
+	[self didAccessValueForKey:@"testAbstractToManyRelationship"];
+	return result;
+}
+	
+
+@dynamic testAbstractToOneRelationship;
+
+	
+
+@dynamic testConcreteToManyRelationship;
+
+	
+- (NSMutableSet*)testConcreteToManyRelationshipSet {
+	[self willAccessValueForKey:@"testConcreteToManyRelationship"];
+  
+	NSMutableSet *result = (NSMutableSet*)[self mutableSetValueForKey:@"testConcreteToManyRelationship"];
+  
+	[self didAccessValueForKey:@"testConcreteToManyRelationship"];
+	return result;
+}
+	
+
+@dynamic testConcreteToOneRelationship;
 
 	
 

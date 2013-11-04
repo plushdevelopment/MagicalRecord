@@ -8,7 +8,6 @@ const struct AbstractRelatedEntityAttributes AbstractRelatedEntityAttributes = {
 };
 
 const struct AbstractRelatedEntityRelationships AbstractRelatedEntityRelationships = {
-	.mainTestEntity = @"mainTestEntity",
 };
 
 const struct AbstractRelatedEntityFetchedProperties AbstractRelatedEntityFetchedProperties = {
@@ -53,10 +52,6 @@ const struct AbstractRelatedEntityFetchedProperties AbstractRelatedEntityFetched
 
 
 
-
-@dynamic mainTestEntity;
-
-	
 
 
 

@@ -9,13 +9,11 @@ extern const struct AbstractRelatedEntityAttributes {
 } AbstractRelatedEntityAttributes;
 
 extern const struct AbstractRelatedEntityRelationships {
-	__unsafe_unretained NSString *mainTestEntity;
 } AbstractRelatedEntityRelationships;
 
 extern const struct AbstractRelatedEntityFetchedProperties {
 } AbstractRelatedEntityFetchedProperties;
 
-@class SingleRelatedEntity;
 
 
 
@@ -42,13 +40,6 @@ extern const struct AbstractRelatedEntityFetchedProperties {
 
 
 
-@property (nonatomic, strong) SingleRelatedEntity *mainTestEntity;
-
-//- (BOOL)validateMainTestEntity:(id*)value_ error:(NSError**)error_;
-
-
-
-
 
 @end
 
@@ -63,11 +54,6 @@ extern const struct AbstractRelatedEntityFetchedProperties {
 - (void)setPrimitiveSampleBaseAttribute:(NSString*)value;
 
 
-
-
-
-- (SingleRelatedEntity*)primitiveMainTestEntity;
-- (void)setPrimitiveMainTestEntity:(SingleRelatedEntity*)value;
 
 
 @end

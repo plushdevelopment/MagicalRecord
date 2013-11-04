@@ -7,12 +7,16 @@ const struct SingleEntityWithNoRelationshipsAttributes SingleEntityWithNoRelatio
 	.booleanTestAttribute = @"booleanTestAttribute",
 	.colorTestAttribute = @"colorTestAttribute",
 	.dateTestAttribute = @"dateTestAttribute",
+	.dateWithCustomFormat = @"dateWithCustomFormat",
 	.decimalTestAttribute = @"decimalTestAttribute",
 	.doubleTestAttribute = @"doubleTestAttribute",
 	.floatTestAttribute = @"floatTestAttribute",
 	.int16TestAttribute = @"int16TestAttribute",
 	.int32TestAttribute = @"int32TestAttribute",
 	.int64TestAttribute = @"int64TestAttribute",
+	.mappedStringAttribute = @"mappedStringAttribute",
+	.notInJsonAttribute = @"notInJsonAttribute",
+	.nullTestAttribute = @"nullTestAttribute",
 	.stringTestAttribute = @"stringTestAttribute",
 };
 
@@ -78,6 +82,11 @@ const struct SingleEntityWithNoRelationshipsFetchedProperties SingleEntityWithNo
 		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
 		return keyPaths;
 	}
+	if ([key isEqualToString:@"nullTestAttributeValue"]) {
+		NSSet *affectingKey = [NSSet setWithObject:@"nullTestAttribute"];
+		keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKey];
+		return keyPaths;
+	}
 
 	return keyPaths;
 }
@@ -119,6 +128,13 @@ const struct SingleEntityWithNoRelationshipsFetchedProperties SingleEntityWithNo
 
 
 @dynamic dateTestAttribute;
+
+
+
+
+
+
+@dynamic dateWithCustomFormat;
 
 
 
@@ -256,6 +272,46 @@ const struct SingleEntityWithNoRelationshipsFetchedProperties SingleEntityWithNo
 
 - (void)setPrimitiveInt64TestAttributeValue:(int64_t)value_ {
 	[self setPrimitiveInt64TestAttribute:[NSNumber numberWithLongLong:value_]];
+}
+
+
+
+
+
+@dynamic mappedStringAttribute;
+
+
+
+
+
+
+@dynamic notInJsonAttribute;
+
+
+
+
+
+
+@dynamic nullTestAttribute;
+
+
+
+- (int64_t)nullTestAttributeValue {
+	NSNumber *result = [self nullTestAttribute];
+	return [result longLongValue];
+}
+
+- (void)setNullTestAttributeValue:(int64_t)value_ {
+	[self setNullTestAttribute:[NSNumber numberWithLongLong:value_]];
+}
+
+- (int64_t)primitiveNullTestAttributeValue {
+	NSNumber *result = [self primitiveNullTestAttribute];
+	return [result longLongValue];
+}
+
+- (void)setPrimitiveNullTestAttributeValue:(int64_t)value_ {
+	[self setPrimitiveNullTestAttribute:[NSNumber numberWithLongLong:value_]];
 }
 
 
